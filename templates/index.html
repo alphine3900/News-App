@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily News</title>
+</head>
+
+<body>
+    <div class="jumbotron" style="color:aqua">
+     <h1 style="color: blue;">Software Engineer</h1> 
+   
+
+    <div class="container">
+        {% for news,desc, img,i,content, link in context%}
+    </div>
+    <div> <img src="{{i}}" alt=""></div>
+    <div><h3>News</h3>{{news}}</div>
+    <div><h4>Describtion</h4>{{desc}}</div>
+    <div><h5>content</h5>{{content}}</div>
+
+    {%endfor%}
+    
+</div>  
+</body>
+</html>
