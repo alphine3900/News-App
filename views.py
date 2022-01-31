@@ -23,14 +23,14 @@ def index():
 #     for i in range(len(articles)):
 #         myarticles = articles[i]
 #         news.append(myarticles['title'])
-#         desc.append(myarticles['description'])
+#         description.append(myarticles['description'])
 #         img.append(myarticles['urlToImage'])
 #         time.append(myarticles['publishedAt'])
 #         content.append(myarticles['content'])
 #         link.append(myarticles['url'])
 
 
-#         my_list = zip(desc,content,img,news,link,time)
+        my_list = zip(description,content,img,news,link,time)
         return render_template('index.html', context=my_list)
 
 if __name__ == '__main__':

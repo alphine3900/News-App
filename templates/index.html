@@ -13,13 +13,14 @@
    
 
 <div class="container">
-    {% for news,desc, img, time,i,content, link in context %}
+    {% for news,description, img, time,i,content, link in context %}
    
-    <div> <img src="{{i}}" alt=""></div>
-    <div><h2>Link</h2>{{link}}</div>
-    <div><h3>News</h3>{{news}}</div>
-    <div><h4>Describtion</h4>{{desc}}</div>
+
+    <div><h4>Describtion</h4>{{description}}</div>
     <div><h5>Content</h5>{{content}}</div>
+    <div> <img src="{{i}}" alt=""></div>
+    <div><h3>News</h3>{{news}}</div>
+    <div><h2>Link</h2>{{link}}</div>
      <div><h6>Time</h6>{{time}}</div>
     {% endfor %}
     </div>    
