@@ -12,25 +12,28 @@ def index():
     topheadlines = newapi.get_top_headlines(sources="al-jazeera-english")
 
     articles = topheadlines['articles']
-    description = []
+
     news = []
+    description = []
+    link = []
     img = []
-    # time = []
+    time = []
     content = []
-    # link = []
+   
 
 
     for i in range(len(articles)):
         myarticles = articles[i]
         news.append(myarticles['title'])
         description.append(myarticles['description'])
+        link.append(myarticles['url'])
         img.append(myarticles['urlToImage'])
-        # time.append(myarticles['publishedAt'])
+        time.append(myarticles['publishedAt'])
         content.append(myarticles['content'])
-        # link.append(myarticles['url'])
+       
 
 
-        my_list = zip(description,content,img,news)
+        my_list = zip( news,description,link,img,time,content)
         return render_template('index.html', context=my_list)
 
 
@@ -40,26 +43,27 @@ def home():
     topheadlines = newapi.get_top_headlines(sources="bbc-news")
 
     articles = topheadlines['articles']
-    description = []
     news = []
+    description = []
+    link = []
     img = []
-    # time = []
+    time = []
     content = []
-    # link = []
 
 
     for i in range(len(articles)):
         myarticles = articles[i]
         news.append(myarticles['title'])
         description.append(myarticles['description'])
+        link.append(myarticles['url'])
         img.append(myarticles['urlToImage'])
-        # time.append(myarticles['publishedAt'])
+        time.append(myarticles['publishedAt'])
         content.append(myarticles['content'])
-        # link.append(myarticles['url'])
+       
 
 
-        my_list = zip(description,content,img,news)
-        return render_template('home.html', context=my_list)
+    my_list = zip( news,description,link,img,time,content)
+    return render_template('home.html', context=my_list)
 
 # @app.route('/home')
 # def home():
