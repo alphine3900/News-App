@@ -6,8 +6,8 @@ from newsapi import NewsApiClient
 app = Flask(__name__)
 
 
-# @app.route('/')
-# def index():
+@app.route('/')
+def index():
 #     newapi = NewsApiClient(api_key="6c9aad01acf44f5593688f40d255c0ca")
 #     topheadlines = newapi.get_top_headlines(sources="ABC News")
 
@@ -31,7 +31,7 @@ app = Flask(__name__)
 
 
 #         my_list = zip(desc,content,img,news,link,time)
-#         return render_template('index.html', context=my_list)
+        return render_template('index.html', context=my_list)
 
 if __name__ == '__main__':
     app.run(debug = True)   
