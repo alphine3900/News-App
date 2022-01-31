@@ -6,32 +6,32 @@ from newsapi import NewsApiClient
 app = Flask(__name__)
 
 
-@app.route('/')
-def index():
-    newapi = NewsApiClient(api_key="6c9aad01acf44f5593688f40d255c0ca")
-    topheadlines = newapi.get_top_headlines(sources="ABC News")
+# @app.route('/')
+# def index():
+#     newapi = NewsApiClient(api_key="6c9aad01acf44f5593688f40d255c0ca")
+#     topheadlines = newapi.get_top_headlines(sources="ABC News")
 
-    articles = topheadlines['articles']
-    desc = []
-    news = []
-    img = []
-    time = []
-    content = []
-    link = []
-
-
-    for i in range(len(articles)):
-        myarticles = articles[i]
-        news.append(myarticles['title'])
-        desc.append(myarticles['description'])
-        img.append(myarticles['urlToImage'])
-        time.append(myarticles['publishedAt'])
-        content.append(myarticles['content'])
-        link.append(myarticles['url'])
+#     articles = topheadlines['articles']
+#     desc = []
+#     news = []
+#     img = []
+#     time = []
+#     content = []
+#     link = []
 
 
-        my_list = zip(desc,content,img,news,link,time)
-        return render_template('index.html',context=my_list)
+#     for i in range(len(articles)):
+#         myarticles = articles[i]
+#         news.append(myarticles['title'])
+#         desc.append(myarticles['description'])
+#         img.append(myarticles['urlToImage'])
+#         time.append(myarticles['publishedAt'])
+#         content.append(myarticles['content'])
+#         link.append(myarticles['url'])
 
-        if __name__ == "__main__":
-            app.run(debug = True)
+
+#         my_list = zip(desc,content,img,news,link,time)
+#         return render_template('index.html', context=my_list)
+
+if __name__ == '__main__':
+    app.run(debug = True)   
