@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome home</h1>
+    <p>
+        <a href="/">previous page</a>
+    </p>
+
+    <div class="jumbotron" style="color:aqua">
+        <h1 style="color: blue;">Software Engineer</h1> 
+      
+   
+   <div class="container">
+       {% for news,description,  i,content in context %}
+      
+   
+       <div> <img src="{{i}}" alt=""></div>
+       <div><h3>News</h3>{{news}}</div>
+       <div><h4>Description</h4>{{description}}</div>
+       <div><h5>Content</h5>{{content}}</div>
+       
+        <!-- <div><h2>Link</h2>{{link}}</div> -->
+        <!-- <div><h6>Time</h6>{{time}}</div>  -->
+       {% endfor %}
+       </div>    
+   </div>  
+</body>
+</html>
