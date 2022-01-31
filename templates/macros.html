@@ -1,0 +1,18 @@
+{% macro display_news(news_list) %}
+
+    {% for news in news_list %}
+        <!-- <li>{{ news.title}}</li> -->
+        <div class="newsdiv">
+            <div class="row">
+                <div class="col newsby">Author: {{ news.author }}</div>
+               <div class="col dates">Date: {{news.publishedAt}}</div>
+            </div>
+            <div class="title">{{ news.title}}</div>
+            <div class="image"><img src=" {{news.urlToImage}}" width="100%" height="250px"alt=""></div>
+            <div class="description">{{news.description}}</div>
+            <div class="content">{{ news.content }}</div>
+            <div class="links"><a href="{{news.url}}">Read more</a></div>
+        </div>
+    {% endfor %}
+
+{% endmacro %}
