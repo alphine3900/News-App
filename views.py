@@ -161,5 +161,35 @@ def health():
     my_list = zip( news,description,link,img,time,content)
     return render_template('health.html', context=my_list)
 
+@app.route('/business')
+def business():
+    newapi = NewsApiClient(api_key="6c9aad01acf44f5593688f40d255c0ca")
+    topheadlines = newapi.get_top_headlines(sources="CNN")
+
+    articles = topheadlines['articles']
+    news = []
+    description = []
+    link = []
+    img = []
+    time = []
+    content = []
+
+
+    for i in range(len(articles)):
+        myarticles = articles[i]
+        news.append(myarticles['title'])
+        description.append(myarticles['description'])
+        link.append(myarticles['url'])
+        img.append(myarticles['urlToImage'])
+        time.append(myarticles['publishedAt'])
+        content.append(myarticles['content'])
+       
+
+
+    my_list = zip( news,description,link,img,time,content)
+    return render_template('business.html', context=my_list)
+
+
+
 if __name__ == '__main__':
     app.run(debug = True)   
