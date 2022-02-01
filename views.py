@@ -70,6 +70,33 @@ def home():
     return render_template('home.html', context=my_list)
 
 
+@app.route('/sports')
+def sports():
+    newapi = NewsApiClient(api_key="6c9aad01acf44f5593688f40d255c0ca")
+    topheadlines = newapi.get_top_headlines(sources="ESPN")
+
+    articles = topheadlines['articles']
+    news = []
+    description = []
+    link = []
+    img = []
+    time = []
+    content = []
+
+
+    for i in range(len(articles)):
+        myarticles = articles[i]
+        news.append(myarticles['title'])
+        description.append(myarticles['description'])
+        link.append(myarticles['url'])
+        img.append(myarticles['urlToImage'])
+        time.append(myarticles['publishedAt'])
+        content.append(myarticles['content'])
+       
+
+
+    my_list = zip( news,description,link,img,time,content)
+    return render_template('sports.html', context=my_list)
 
 
 
