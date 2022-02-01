@@ -75,10 +75,12 @@ def home():
 
 
 
-@app.route('/sports')
-def sports():
+
+
+@app.route('/entertainment')
+def entertainment():
     newapi = NewsApiClient(api_key="6c9aad01acf44f5593688f40d255c0ca")
-    topheadlines = newapi.get_top_headlines(sources="ESPN")
+    topheadlines = newapi.get_top_headlines(sources="News24")
 
     articles = topheadlines['articles']
     news = []
@@ -101,7 +103,7 @@ def sports():
 
 
     my_list = zip( news,description,link,img,time,content)
-    return render_template('sports.html', context=my_list)
+    return render_template('entertainment.html', context=my_list)
 
 if __name__ == '__main__':
     app.run(debug = True)   
