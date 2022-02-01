@@ -8,38 +8,30 @@
     rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
     crossorigin="anonymous">
-    <link rel="stylesheet" href="/stastic/index.css">
-    <title>Daily News</title>
+    <title>Document</title>
 </head>
-
 <body>
+    <h1></h1>
+    <p>
+        <a href="/">previous page</a>
+    </p>
 
     <div class="jumbotron" style="color:black">
-
-        <div class="navbar">
-            <ul>
-                <li><a href="/home">BBC NEWS</a></li>
-                <li><a href="/sports">SPORT NEWS</a></li>
-                <li><a href="/">CONTACT</a></li>
-            </ul>
-        </div>
-     <h1 style="color: blue;">AL-JAZEERA NEWS</h1> 
+        <h1 style="color: blue;">sports NEWS</h1> 
+      
    
-
-<div class="container">
-    {% for news,description,link,  i, time,content in context %}
+   <div class="container">
+       {% for news,description,link,  i, time,content in context %}
+      
    
-
-    
     <div><h3>News</h3>{{news}}</div>
     <div><h4>Description</h4>{{description}}</div>
     <div><h2>Link</h2>{{link}}</div>
     <div> <img src="{{i}}" alt=""></div>
     <div><h6>Time</h6>{{time}}</div>
     <div><h5>Content</h5>{{content}}</div>
-    
-    {% endfor %}
-    </div>    
-</div>  
+       {% endfor %}
+       </div>    
+   </div>  
 </body>
 </html>
